@@ -1,0 +1,155 @@
+/*RESET*/
+ *{
+	margin:0;
+	padding:0;
+	box-sizing:content-box;	 
+ }
+ 
+ @viewport {
+   width: device-width; /* largeur du viewport */
+   zoom: 1; /* zoom initial à 1.0 */
+}
+
+body{
+	font-family: 'Hammersmith One', sans-serif;
+	text-align: center;
+}
+#container{
+	height:100vh;
+	display: grid;
+	grid-template-columns: 1fr 1.1fr 1fr;
+	/* background:linear-gradient(0deg, #DE4B1F , #0D0D0D); */
+	background:linear-gradient(0deg, #592240 , #468BA6,#0D0D0D);
+
+}
+
+@keyframes colorchange{
+	/* 0%{background:linear-gradient(0deg, #DE4B1F 40%, #0D0D0D 30%)}
+	100%{background:linear-gradient(0deg, #DE4B1F, #0D0D0D)} */
+	0%{background:linear-gradient(0deg, #592240 ,  #0D0D0D 30%)}
+	100%{background:linear-gradient(0deg, #592240 , #468BA6, #0D0D0D)}
+}
+
+#main{
+	background-color: #0D0D0D;
+	/* background:conic-gradient(from 180deg, #D9D9D9, #0D0D0D); */
+	height: 150px;
+	filter:drop-shadow(0 0 2rem #0D0D0D);
+}
+.changing{
+	/* transition-timing-function: ease-in-out; */
+	animation: colorchange 9s;
+	animation-iteration-count: 1;
+	transition-duration: 1s;
+	/* transition-delay: 1s; */
+}
+/* ---------------------------------- */
+.c5{
+	display: flex;
+	flex-direction: column;
+	background-color: #0D0D0D;
+	gap:2px;
+	padding:12px;
+}
+#row{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#git, #mail, #cv, #linkedIn, #wordpress{
+	font-size: 22px;
+  	transition: 0.5s;
+	transform: scale() rotate();
+	transition: all 1.25s;
+	padding: 18px 25px;
+}
+
+#git a, #mail a, #cv a, #linkedIn a, #wordpress a{
+	background: #50ABBF;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	opacity: 0.6;
+	transition: opacity 2s ease-in-out;
+	cursor: pointer;
+}
+/* légende comme title html en js */
+/* #gitText, #mailText, #cvText{
+	font-size: 12px;
+	color:#DE4B1F;
+} */
+#git:hover, #mail:hover, #cv:hover, #linkedIn:hover, #wordpress:hover{
+	transform: translateY(5px) translateX(5px) scale(1.2) rotate(1turn);
+	opacity: .5;
+}
+
+#git a:hover, #mail a:hover, #cv a:hover #linkedIn a:hover, #wordpress a:hover{
+	transform: translateY(0px);
+	opacity: 1;
+	/* color:#F5830B; */
+}
+/* ---------------------------------- */
+
+/* Vincent Lefebvre font gradient */
+ h1{
+	font-family : 'Montserrat', sans-serif;
+	letter-spacing: 2.7px;
+	word-spacing: 0.8px;
+	margin:12px;
+	/* color:#594302; */
+	font-size: 1.3em;
+	font-weight: 700;
+	background: #468BA6;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* https://codepen.io/kh-mamun/pen/NdwZdW */
+.animate{
+	font-weight:600;
+	font-size:1em;
+	color:#733663;
+	padding: 2px 7px 15px;
+	border-bottom: 1px solid #592240;
+	;
+
+}
+.animate span{
+	display: inline-block;
+}
+.h2 span{
+	opacity:0;
+	transform: translateY(-500px) scale(2);
+	animation: leftRight 3s forwards;
+}
+@keyframes leftRight{
+	40%{
+		color: #468BA6;
+		transform: translate(-50px) scale(.7);
+		opacity: 1;
+	}
+	60%{
+		color: #468BA6;
+		transform: translate(-50px) scale(1);
+
+	}
+	80%{
+		transform: translate(-5px) scale(2);
+		opacity: 1;
+	}
+	100%{
+		transform: translate(0) scale(1);
+		opacity: 1;
+	}
+}
+
+/*version mobile*/
+@media only screen and (max-width: 820px) {
+
+	#container{
+		height:100vh;
+		display: grid;
+		grid-template-columns: 1fr 2.2fr 1fr;
+		background:linear-gradient(0deg, #2AA4F7, #C850C0,#FFCC70 30%);
+	}}
+/*fin du medi query mobile*/
